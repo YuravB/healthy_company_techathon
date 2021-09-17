@@ -2,9 +2,8 @@ import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 
 import {AppComponent} from './app.component';
+import {FormBuilder, FormsModule} from '@angular/forms';
 import {LoginPageComponent} from './login-page/login-page.component';
-import {FormsModule} from '@angular/forms';
-import {BaseFormComponent} from './login-page/base-form.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +14,7 @@ import {BaseFormComponent} from './login-page/base-form.component';
     BrowserModule,
     FormsModule
   ],
-  providers: [],
+  providers: [FormBuilder],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

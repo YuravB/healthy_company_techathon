@@ -12,12 +12,12 @@ export class LoginPageComponent extends BaseFormComponent implements OnInit {
 
   public form: FormGroup;
 
-  constructor(private formBuilder: FormBuilder,
-              private router: Router) {
+  constructor(private formBuilder: FormBuilder) {
     super();
   }
 
   ngOnInit(): void {
+    this.initializeForm();
   }
 
   initializeForm() {
