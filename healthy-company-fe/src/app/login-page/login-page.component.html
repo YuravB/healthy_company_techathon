@@ -1,1 +1,85 @@
-<p>login-page works!</p>
+<div class="container-fluid">
+  <div class="row pt-3 justify-content-center">
+    <div class="col-lg-6 col-md-8 col-sm-10 col-xs-12">
+      <div class="card">
+        <div class="card-header bg-dark text-white">
+          <div class="card-title">
+            <div class="row justify-content-between">
+              <div class="col-auto">
+                <h2>Sign In</h2>
+              </div>
+            </div>
+          </div>
+        </div>
+        <form id="login-form">
+          <div class="card-body">
+            <div class="row justify-content-center">
+              <div class="col-sm-10">
+                <div class="form-group">
+                  <label class="control-label" for="login-username">Username <span class="text-danger">*</span></label>
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="fa fa-user  fa-fw"></i></span>
+                    </div>
+                    <input id="login-username"
+                           type="text"
+                           class="form-control"
+                           [ngClass]="addIsInvalidClass('username')"
+                           name="username"
+                           placeholder="Enter NT username"
+                           formControlName="username"
+                           data-cy="username">
+                    <div class="invalid-tooltip" *ngIf="isInvalidAndTouchedOrDirty('username')">
+                      Username is required.
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-10">
+                <div class="form-group">
+                  <label class="control-label" for="login-password">Password <span class="text-danger">*</span></label>
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="fa fa-lock fa-fw"></i></span>
+                    </div>
+                    <input id="login-password"
+                           type="password"
+                           class="form-control"
+                           [ngClass]="addIsInvalidClass('password')"
+                           name="password"
+                           placeholder="Enter password"
+                           formControlName="password"
+                           data-cy="password">
+                    <div class="invalid-tooltip" *ngIf="isInvalidAndTouchedOrDirty('password')">
+                      Password is required.
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-10">
+                <div class="custom-control custom-checkbox">
+                  <input id="remember-me"
+                         type="checkbox"
+                         class="custom-control-input"
+                         formControlName="rememberMe">
+                  <label class="custom-control-label" for="remember-me">Remember Me</label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card-footer">
+            <div class="row justify-content-end">
+              <div class="col-auto">
+                <button name="submit-button" type="submit" class="btn btn-dark" data-cy="submit-login"
+                        id="login-submit"
+                        [disabled]="!form.valid">
+                  Login
+                </button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
