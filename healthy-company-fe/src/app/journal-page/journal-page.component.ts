@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup} from '@angular/forms';
+import {JournalEntryObject} from '../../services/dto/JournalEntryObject';
 
 @Component({
   selector: 'app-journal-page',
@@ -9,17 +10,25 @@ import {FormBuilder, FormGroup} from '@angular/forms';
 export class JournalPageComponent implements OnInit {
   form: FormGroup;
 
-  constructor(private formBuilder: FormBuilder) { }
-
-  ngOnInit(): void {
-  this.initForm();
+  constructor(private formBuilder: FormBuilder) {
   }
 
-  initForm(/*will take in something eventually*/) {
+  ngOnInit(): void {
+    this.initForm();
+  }
+
+  initForm(entry?: JournalEntryObject) {
+    if (entry == null) {
+      entry = {
+        morning: null,
+        afternoon: null,
+        night: null
+      };
+    }
     this.form = this.formBuilder.group({
-      morning: null,
-      afternoon: null,
-      night: null
+      morning: entry.morning,
+      afternoon: entry.afternoon,
+      night: entry.night
     });
   }
 
