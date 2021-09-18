@@ -45,7 +45,7 @@ export class JournalPageComponent implements OnInit {
       afternoon: entry.afternoon,
       night: entry.night,
       mood: this.moodStoreService.mood
-    }, Validators.required);
+    });
   }
 
   openAff() {
