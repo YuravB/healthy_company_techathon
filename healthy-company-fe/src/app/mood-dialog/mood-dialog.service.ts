@@ -20,10 +20,10 @@ export class MoodDialogService {
   }
 
   showDialog(): Subject<string> {
-    let bsModalRef = this.modalService.show(MoodDialogComponent,
+    const bsModalRef = this.modalService.show(MoodDialogComponent,
       Object.assign({}, this.config, {}));
 
-    let modalContent: MoodDialogComponent = bsModalRef.content;
+    const modalContent: MoodDialogComponent = bsModalRef.content;
 
     return modalContent.onClose;
 

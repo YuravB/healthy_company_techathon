@@ -9,12 +9,12 @@ import {MoodDialogService} from '../mood-dialog/mood-dialog.service';
 import {MoodStoreService} from '../mood-dialog/mood-store.service';
 
 const JOURNAL_DATA: JournalObj[] = [
-  {date: new Date(), mood: 'Ecstatic', title: 'Journal 1', affirmations: 'Do Better'},
-  {date: new Date(), mood: 'Sad', title: 'Journal 2', affirmations: 'Do Better'},
-  {date: new Date(), mood: 'Normal', title: 'Journal 3', affirmations: 'Do Better'},
-  {date: new Date(), mood: 'Joyful', title: 'Journal 4', affirmations: 'Do Better'},
-  {date: new Date(), mood: 'Distraught', title: 'Journal 5', affirmations: 'Do Better'},
-  {date: new Date(), mood: 'Normal', title: 'Journal 6', affirmations: 'Do Better'}
+  {date: new Date(), mood: 'Ecstatic', affirmations: 'Do Better'},
+  {date: new Date(), mood: 'Sad', affirmations: 'Do Better'},
+  {date: new Date(), mood: 'Normal', affirmations: 'Do Better'},
+  {date: new Date(), mood: 'Joyful', affirmations: 'Do Better'},
+  {date: new Date(), mood: 'Distraught', affirmations: 'Do Better'},
+  {date: new Date(), mood: 'Normal', affirmations: 'Do Better'}
 ];
 
 @Component({
@@ -24,7 +24,7 @@ const JOURNAL_DATA: JournalObj[] = [
 })
 export class LandingPageComponent implements OnInit, AfterViewInit {
   @ViewChild(MatPaginator) paginator: MatPaginator;
-  displayedColumns: string[] = ['dateCaptured', 'mood', 'title', 'affirmations'];
+  displayedColumns: string[] = ['dateCaptured', 'mood', 'affirmations'];
   dataSource = new MatTableDataSource<JournalObj>(JOURNAL_DATA);
   clickedRows = new Set<JournalObj>();
 
@@ -34,9 +34,6 @@ export class LandingPageComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit(): void {
-    this.moodDialogService.showDialog().subscribe(mood => {
-      this.moodStoreService.mood = mood;
-    });
   }
 
   ngAfterViewInit() {

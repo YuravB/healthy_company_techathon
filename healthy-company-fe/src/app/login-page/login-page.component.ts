@@ -2,6 +2,8 @@ import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {BaseFormComponent} from './base-form.component';
 import {Router} from '@angular/router';
+import {MoodStoreService} from '../mood-dialog/mood-store.service';
+import {MoodDialogService} from '../mood-dialog/mood-dialog.service';
 
 @Component({
   selector: 'app-login-page',
@@ -13,7 +15,9 @@ export class LoginPageComponent extends BaseFormComponent implements OnInit {
   public form: FormGroup;
 
   constructor(private formBuilder: FormBuilder,
-              private router: Router) {
+              private router: Router,
+              public moodDialogService: MoodDialogService,
+              private moodStoreService: MoodStoreService) {
     super();
   }
 
@@ -30,6 +34,9 @@ export class LoginPageComponent extends BaseFormComponent implements OnInit {
   }
 
   public onSubmit() {
+    this.moodDialogService.showDialog().subscribe(mood => {
+      this.moodStoreService.mood = mood;
+    });
     this.router.navigateByUrl('/home');
   }
 

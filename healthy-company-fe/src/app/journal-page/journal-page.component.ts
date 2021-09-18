@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup} from '@angular/forms';
 import {JournalEntryObject} from '../../services/dto/JournalEntryObject';
 import {MoodStoreService} from '../mood-dialog/mood-store.service';
