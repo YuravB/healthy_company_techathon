@@ -5,7 +5,7 @@
 <!--    <mat-icon ></mat-icon>-->
     </a>
     </span>
-    <span>Discovery Healthy Company 2.0</span>
+    <span (click)="routeToHome()" [matTooltip]="'return home'">Discovery Healthy Company 2.0</span>
     <span class="spacer"></span>
     <span><button mat-raised-button color="primary"
                   (click)="routeToJournal()">Add new Journal Entry</button>
