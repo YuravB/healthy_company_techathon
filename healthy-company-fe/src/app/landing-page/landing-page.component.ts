@@ -3,13 +3,7 @@ import {Router} from '@angular/router';
 import {MatPaginator} from '@angular/material/paginator';
 import {MatTableDataSource} from '@angular/material/table';
 import {SettingsDialogService} from '../settings-dialog/settings-dialog.service';
-
-export interface JournalObj {
-  date: Date;
-  mood: string;
-  title: string;
-  affirmations: string;
-}
+import {JournalObj} from '../../services/dto/JournalObj';
 
 const JOURNAL_DATA: JournalObj[] = [
   {date: new Date(), mood: 'Ecstatic', title: 'Journal 1', affirmations: 'Do Better'},
