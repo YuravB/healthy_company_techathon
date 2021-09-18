@@ -1,1 +1,23 @@
-<p>journal-page works!</p>
+<app-nav-bar></app-nav-bar>
+<mat-tab-group>
+  <form class="col-md-12" [formGroup]="form">
+    <mat-tab label="Morning">
+      <mat-form-field class="col-md-12" appearance="fill">
+        <textarea matInput placeholder="How am i feeling today?" formControlName="morning"></textarea>
+      </mat-form-field>
+    </mat-tab>
+    <mat-tab label="Afternoon">
+      <mat-form-field class="col-md-12" appearance="fill">
+        <textarea matInput placeholder="How am i feeling today?" formControlName="afternoon"></textarea>
+      </mat-form-field>
+    </mat-tab>
+    <mat-tab label="Night">
+      <mat-form-field class="col-md-12" appearance="fill">
+        <textarea matInput placeholder="How am i feeling today?" formControlName="night"></textarea>
+      </mat-form-field>
+    </mat-tab>
+  </form>
+</mat-tab-group>
+<div style="text-align: center; padding-top: 10em">
+  <button class="btn-lg" mat-raised-button color="primary" (click)="onSubmit()">Save</button>
+</div>
