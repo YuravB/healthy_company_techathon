@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {BsModalRef} from 'ngx-bootstrap/modal';
+import {Subject} from 'rxjs';
 
 @Component({
   selector: 'app-mood-dialog',
@@ -7,9 +9,33 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MoodDialogComponent implements OnInit {
 
-  constructor() { }
+  public onClose: Subject<string>;
+
+  private _feelings: string = '';
+
+
+  get feelings(): string {
+    return this._feelings;
+  }
+
+  set feelings(value: string) {
+    this._feelings = value;
+  }
+
+  constructor(public bsModalRef: BsModalRef) {
+  }
 
   ngOnInit(): void {
+  }
+
+  public clickOk() {
+    this.bsModalRef.hide();
+    this.onClose.next(this.feelings);
+  }
+
+  public clickCancel() {
+    this.bsModalRef.hide();
+    this.onClose.next(this.feelings);
   }
 
 }

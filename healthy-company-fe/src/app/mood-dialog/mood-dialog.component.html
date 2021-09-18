@@ -1,1 +1,13 @@
-<p>mood-dialog works!</p>
+<div class="modal-header modal-header-item">
+  <h4 class="modal-title pull-left modal-header-text">{{ 'PICK YOUR MOOD!' }}</h4>
+  <button type="button" class="close" aria-label="Close" (click)="clickCancel()">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  {{ 'Testing' }}
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-default" id="dialog-cancel" (click)="clickCancel()">Cancel</button>
+  <button type="button" class="btn btn-success" id="dialog-ok" (click)="clickOk()" autofocus>Ok</button>
+</div>
