@@ -1,14 +1,23 @@
-<nav class="navbar navbar-dark bg-primary">
-  <a class="navbar-brand" href="/home">
-<!--        <img src="src/assets/MicrosoftTeams-image (6).png" width="30" height="30" class="d-inline-block" alt="">-->
-    <strong class="text-uppercase" style="padding-left: 50px; padding-bottom: 50px; color: white">Discovery Healthy
-      Company 2.0</strong>
-  </a>
-  <div style="padding-top: 14px">
-    <a style="color: white" href="#">Add New Journal Entry</a>
-    <a style="color: white; padding-left: 10px" href="#">About</a>
-  </div>
-<!--  <div style="alignment: right">-->
-<!--    <button class="btn btn-outline-success" href="/login" style="alignment: right"><strong>Logout</strong></button>-->
-<!--  </div>-->
-</nav>
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <span class="spacer">
+    <a>
+<!--    <mat-icon ></mat-icon>-->
+    </a>
+    </span>
+    <span>Discovery Healthy Company 2.0</span>
+    <span class="spacer"><button mat-raised-button color="primary"
+                                 (click)="routeToJournal()">Add new Journal Entry</button></span>
+    <span class="spacer"><button mat-raised-button color="primary" (click)="routeToAbout()">About</button></span>
+    <span class="example-spacer"></span>
+    <span><button mat-raised-button color="primary" (click)="routeToLogin()">Logout</button></span>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<mat-paginator [length]="100"
+               [pageSize]="10"
+               [pageSizeOptions]="[5, 10, 25, 100]"
+               aria-label="Select page">
+</mat-paginator>
+
+

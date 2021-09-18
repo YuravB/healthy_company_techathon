@@ -13,6 +13,10 @@ import {AppRoutingModule} from './app-routing/app-routing.module';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {BsModalRef} from 'ngx-bootstrap/modal';
 import {MoodDialogService} from './mood-dialog/mood-dialog.service';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatIconModule} from '@angular/material/icon';
+import {MatButtonModule} from '@angular/material/button';
+import {MatPaginatorModule} from '@angular/material/paginator';
 
 @NgModule({
   declarations: [
@@ -29,6 +33,10 @@ import {MoodDialogService} from './mood-dialog/mood-dialog.service';
     ReactiveFormsModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatButtonModule,
+    MatPaginatorModule,
   ],
   providers: [FormBuilder, BsModalRef, MoodDialogService],
   bootstrap: [AppComponent]
