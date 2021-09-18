@@ -4,13 +4,6 @@ import {MatPaginator} from '@angular/material/paginator';
 import {MatTableDataSource} from '@angular/material/table';
 import {SettingsDialogService} from '../settings-dialog/settings-dialog.service';
 
-export enum paths {
-  LANDING = '/home',
-  LOGIN = '/login',
-  ABOUT = '/about',
-  JOURNAL = '/journal'
-}
-
 export interface JournalObj {
   date: Date;
   mood: string;
@@ -42,22 +35,6 @@ export class LandingPageComponent implements OnInit, AfterViewInit {
   ngOnInit(): void {
   }
 
-  public routeToLogin() {
-    this.router.navigateByUrl(paths.LOGIN);
-  }
-
-  public routeToHome() {
-    this.router.navigateByUrl(paths.LANDING);
-  }
-
-  public routeToAbout() {
-    this.router.navigateByUrl(paths.ABOUT);
-  }
-
-  public routeToJournal() {
-    this.router.navigateByUrl(paths.JOURNAL);
-  }
-
   displayedColumns: string[] = ['dateCaptured', 'mood', 'title', 'affirmations'];
   dataSource =  new MatTableDataSource<JournalObj>(JOURNAL_DATA);
   clickedRows = new Set<JournalObj>();
@@ -69,8 +46,13 @@ export class LandingPageComponent implements OnInit, AfterViewInit {
   }
 
   parseObjectToJson(obj: JournalObj) {
-    console.log(JSON.parse(JSON.stringify(obj)));
     return JSON.parse(JSON.stringify(obj));
+  }
+
+  addNewRowToSet(row: JournalObj) {
+    this.clickedRows.clear();
+    this.clickedRows.add(row);
+    console.log(this.clickedRows);
   }
 
 

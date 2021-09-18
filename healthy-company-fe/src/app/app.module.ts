@@ -20,6 +20,7 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 import {ComponentLoaderFactory} from 'ngx-bootstrap/component-loader';
 import {PositioningService} from 'ngx-bootstrap/positioning';
 import {MatTableModule} from '@angular/material/table';
+import { NavBarComponent } from './nav-bar/nav-bar.component';
 import {SettingsDialogComponent} from './settings-dialog/settings-dialog.component';
 import {MatSliderModule} from '@angular/material/slider';
 
@@ -30,6 +31,8 @@ import {MatSliderModule} from '@angular/material/slider';
     JournalPageComponent,
     LandingPageComponent,
     MoodDialogComponent,
+    TocDialogComponent,
+    NavBarComponent,
     TocDialogComponent,
     SettingsDialogComponent
   ],
