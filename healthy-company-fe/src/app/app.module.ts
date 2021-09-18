@@ -28,7 +28,7 @@ import {MatInputModule} from '@angular/material/input';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {FooterComponent} from './footer/footer.component';
-import { AffirmationNotifComponent } from './affirmation-notif/affirmation-notif.component';
+import {MatSnackBar} from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [
@@ -41,8 +41,7 @@ import { AffirmationNotifComponent } from './affirmation-notif/affirmation-notif
     NavBarComponent,
     TocDialogComponent,
     SettingsDialogComponent,
-    FooterComponent,
-    AffirmationNotifComponent
+    FooterComponent
   ],
   imports: [
     BrowserModule,
@@ -68,7 +67,8 @@ import { AffirmationNotifComponent } from './affirmation-notif/affirmation-notif
     MoodDialogService,
     BsModalService,
     ComponentLoaderFactory,
-    PositioningService
+    PositioningService,
+    MatSnackBar
   ],
   bootstrap: [AppComponent]
 })
