@@ -12,7 +12,7 @@ export class LoginPageComponent extends BaseFormComponent implements OnInit {
 
   public form: FormGroup;
 
-  constructor(private formBuilder: FormBuilder) {
+  constructor(private formBuilder: FormBuilder, private router: Router) {
     super();
   }
 
@@ -28,16 +28,8 @@ export class LoginPageComponent extends BaseFormComponent implements OnInit {
     });
   }
 
-  /*  routeAfterSuccessfulLogin() {
-      this.router.navigate([this.authService.afterUrlLogin])
-        .catch(error => {
-          console.log(error);
-        });
-    }*/
-
   public onSubmit() {
-    /*    this.authService.login(this.form.value)
-          .subscribe(() => this.routeAfterSuccessfulLogin());*/
+      this.router.navigateByUrl('/home');
   }
 
 }

@@ -8,6 +8,8 @@ import { JournalPageComponent } from './journal-page/journal-page.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { MoodDialogComponent } from './mood-dialog/mood-dialog.component';
 import { TocDialogComponent } from './toc-dialog/toc-dialog.component';
+import {RouterModule} from '@angular/router';
+import {AppRoutingModule} from './app-routing/app-routing.module';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,8 @@ import { TocDialogComponent } from './toc-dialog/toc-dialog.component';
   imports: [
     BrowserModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AppRoutingModule
   ],
   providers: [FormBuilder],
   bootstrap: [AppComponent]
