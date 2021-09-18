@@ -7,7 +7,8 @@ import {LoginPageComponent} from './login-page/login-page.component';
 import { JournalPageComponent } from './journal-page/journal-page.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { MoodDialogComponent } from './mood-dialog/mood-dialog.component';
-import { TocDialogComponent } from './toc-dialog/toc-dialog.component';
+import {TocDialogComponent} from './toc-dialog/toc-dialog.component';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { TocDialogComponent } from './toc-dialog/toc-dialog.component';
   imports: [
     BrowserModule,
     FormsModule,
+    BrowserAnimationsModule,
     ReactiveFormsModule
   ],
   providers: [FormBuilder],
