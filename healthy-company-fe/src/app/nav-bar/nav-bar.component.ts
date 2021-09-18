@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {paths} from '../paths';
 import {Router} from '@angular/router';
+import {SettingsDialogService} from '../settings-dialog/settings-dialog.service';
 
 @Component({
   selector: 'app-nav-bar',
@@ -9,7 +10,9 @@ import {Router} from '@angular/router';
 })
 export class NavBarComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(private router: Router,
+              public settings: SettingsDialogService) {
+  }
 
   ngOnInit(): void {
   }

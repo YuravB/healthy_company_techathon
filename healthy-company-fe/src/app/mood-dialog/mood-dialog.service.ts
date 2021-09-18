@@ -19,7 +19,7 @@ export class MoodDialogService {
   constructor(private modalService: BsModalService) {
   }
 
-  showSummaryDiaog(): Subject<string> {
+  showDialog(): Subject<string> {
     let bsModalRef = this.modalService.show(MoodDialogComponent,
       Object.assign({}, this.config, {}));
 

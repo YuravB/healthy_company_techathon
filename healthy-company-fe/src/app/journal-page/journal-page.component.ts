@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup} from '@angular/forms';
 import {JournalEntryObject} from '../../services/dto/JournalEntryObject';
+import {MoodStoreService} from '../mood-dialog/mood-store.service';
 
 @Component({
   selector: 'app-journal-page',
@@ -10,7 +11,8 @@ import {JournalEntryObject} from '../../services/dto/JournalEntryObject';
 export class JournalPageComponent implements OnInit {
   form: FormGroup;
 
-  constructor(private formBuilder: FormBuilder) {
+  constructor(private formBuilder: FormBuilder,
+              private moodStoreService: MoodStoreService) {
   }
 
   ngOnInit(): void {
@@ -22,13 +24,15 @@ export class JournalPageComponent implements OnInit {
       entry = {
         morning: null,
         afternoon: null,
-        night: null
+        night: null,
+        mood: this.moodStoreService.mood
       };
     }
     this.form = this.formBuilder.group({
       morning: entry.morning,
       afternoon: entry.afternoon,
-      night: entry.night
+      night: entry.night,
+      mood: this.moodStoreService.mood
     });
   }
 

@@ -5,6 +5,8 @@ import {MatTableDataSource} from '@angular/material/table';
 import {SettingsDialogService} from '../settings-dialog/settings-dialog.service';
 import {JournalObj} from '../../services/dto/JournalObj';
 import {FormBuilder, FormGroup} from '@angular/forms';
+import {MoodDialogService} from '../mood-dialog/mood-dialog.service';
+import {MoodStoreService} from '../mood-dialog/mood-store.service';
 
 const JOURNAL_DATA: JournalObj[] = [
   {date: new Date(), mood: 'Ecstatic', title: 'Journal 1', affirmations: 'Do Better'},
@@ -27,10 +29,14 @@ export class LandingPageComponent implements OnInit, AfterViewInit {
   clickedRows = new Set<JournalObj>();
 
   constructor(private router: Router,
-              public settings: SettingsDialogService) {
+              public moodDialogService: MoodDialogService,
+              private moodStoreService: MoodStoreService) {
   }
 
   ngOnInit(): void {
+    this.moodDialogService.showDialog().subscribe(mood => {
+      this.moodStoreService.mood = mood;
+    });
   }
 
   ngAfterViewInit() {

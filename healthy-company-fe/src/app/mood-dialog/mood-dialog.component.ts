@@ -25,21 +25,13 @@ export class MoodDialogComponent implements OnInit {
   }
 
   ngOnInit(): void {
-  }
-
-  public clickOk() {
-    this.bsModalRef.hide();
-    this.onClose.next(this.feelings);
-  }
-
-  public clickCancel() {
-    this.bsModalRef.hide();
-    // this.onClose.next(this.feelings);
+    this.onClose = new Subject();
   }
 
   setFeelings(feels: string) {
     this.feelings = feels;
-    console.log(feels);
+    this.bsModalRef.hide();
+    this.onClose.next(this.feelings);
   }
 
 }
