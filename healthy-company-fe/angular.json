@@ -127,5 +127,8 @@
       }
     }
   },
-  "defaultProject": "healthy-company-fe"
+  "defaultProject": "healthy-company-fe",
+  "cli": {
+    "analytics": false
+  }
 }
