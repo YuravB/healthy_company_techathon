@@ -11,8 +11,7 @@ export class MoodDialogComponent implements OnInit {
 
   public onClose: Subject<string>;
 
-  private _feelings: string = '';
-
+  private _feelings = '';
 
   get feelings(): string {
     return this._feelings;
@@ -35,7 +34,12 @@ export class MoodDialogComponent implements OnInit {
 
   public clickCancel() {
     this.bsModalRef.hide();
-    this.onClose.next(this.feelings);
+    // this.onClose.next(this.feelings);
+  }
+
+  setFeelings(feels: string) {
+    this.feelings = feels;
+    console.log(feels);
   }
 
 }

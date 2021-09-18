@@ -11,13 +11,17 @@ import {TocDialogComponent} from './toc-dialog/toc-dialog.component';
 import {RouterModule} from '@angular/router';
 import {AppRoutingModule} from './app-routing/app-routing.module';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {BsModalRef} from 'ngx-bootstrap/modal';
+import {BsModalRef, BsModalService} from 'ngx-bootstrap/modal';
 import {MoodDialogService} from './mood-dialog/mood-dialog.service';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import {MatPaginatorModule} from '@angular/material/paginator';
+import {ComponentLoaderFactory} from 'ngx-bootstrap/component-loader';
+import {PositioningService} from 'ngx-bootstrap/positioning';
 import {MatTableModule} from '@angular/material/table';
+import {SettingsDialogComponent} from './settings-dialog/settings-dialog.component';
+import {MatSliderModule} from '@angular/material/slider';
 
 @NgModule({
   declarations: [
@@ -26,7 +30,8 @@ import {MatTableModule} from '@angular/material/table';
     JournalPageComponent,
     LandingPageComponent,
     MoodDialogComponent,
-    TocDialogComponent
+    TocDialogComponent,
+    SettingsDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -39,8 +44,16 @@ import {MatTableModule} from '@angular/material/table';
     MatButtonModule,
     MatPaginatorModule,
     MatTableModule,
+    MatSliderModule,
   ],
-  providers: [FormBuilder, BsModalRef, MoodDialogService],
+  providers: [
+    FormBuilder,
+    BsModalRef,
+    MoodDialogService,
+    BsModalService,
+    ComponentLoaderFactory,
+    PositioningService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -4,10 +4,45 @@
     <span aria-hidden="true">&times;</span>
   </button>
 </div>
-<div class="modal-body">
-  {{ 'Testing' }}
+<div>
+  <table class="table">
+    <tbody>
+    <tr>
+      <td class="text-center">
+        <button class="my-class" (click)="setFeelings('happy')"></button>
+      </td>
+      <td class="text-center">
+        <button class="my-class" (click)="setFeelings('joy')"></button>
+      </td>
+      <td class="text-center">
+        <button class="my-class" (click)="setFeelings('proud')"></button>
+      </td>
+    </tr>
+    <tr>
+      <td class="text-center">
+        <button class="my-class" (click)="setFeelings('sadness')"></button>
+      </td>
+      <td class="text-center">
+        <button class="my-class" (click)="setFeelings('fear')"></button>
+      </td>
+      <td class="text-center">
+        <button class="my-class" (click)="setFeelings('embarrassment')"></button>
+      </td>
+    </tr>
+    <tr>
+      <td class="text-center">
+        <button class="my-class" (click)="setFeelings('worry')"></button>
+      </td>
+      <td class="text-center">
+        <button class="my-class" (click)="setFeelings('anger')"></button>
+      </td>
+      <td class="text-center">
+        <button class="my-class" (click)="setFeelings('upset')"></button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
 </div>
 <div class="modal-footer">
   <button type="button" class="btn btn-default" id="dialog-cancel" (click)="clickCancel()">Cancel</button>
-  <button type="button" class="btn btn-success" id="dialog-ok" (click)="clickOk()" autofocus>Ok</button>
 </div>

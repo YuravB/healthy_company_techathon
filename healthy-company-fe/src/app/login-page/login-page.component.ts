@@ -12,7 +12,8 @@ export class LoginPageComponent extends BaseFormComponent implements OnInit {
 
   public form: FormGroup;
 
-  constructor(private formBuilder: FormBuilder, private router: Router) {
+  constructor(private formBuilder: FormBuilder,
+              private router: Router) {
     super();
   }
 
@@ -29,7 +30,7 @@ export class LoginPageComponent extends BaseFormComponent implements OnInit {
   }
 
   public onSubmit() {
-      this.router.navigateByUrl('/home');
+    this.router.navigateByUrl('/home');
   }
 
 }

@@ -1,0 +1,19 @@
+<div class="modal-header modal-header-item">
+  <h4 class="modal-title pull-left modal-header-text">{{ 'Settings' }}</h4>
+  <button type="button" class="close" aria-label="Close" (click)="clickCancel()">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <div>
+    <label>Journal Auto Saver Timer :</label>
+    <mat-slider min="1" max="24" step="1" value="24"></mat-slider>
+  </div>
+  <div>
+    <label>Version Number :</label> {{versionNumber}}
+  </div>
+
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-default" id="dialog-cancel" (click)="clickCancel()">Cancel</button>
+</div>

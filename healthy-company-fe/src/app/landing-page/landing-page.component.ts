@@ -2,6 +2,7 @@ import {AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
 import {Router} from '@angular/router';
 import {MatPaginator} from '@angular/material/paginator';
 import {MatTableDataSource} from '@angular/material/table';
+import {SettingsDialogService} from '../settings-dialog/settings-dialog.service';
 
 export enum paths {
   LANDING = '/home',
@@ -34,7 +35,8 @@ const JOURNAL_DATA: JournalObj[] = [
 })
 export class LandingPageComponent implements OnInit, AfterViewInit {
 
-  constructor(private router: Router) {
+  constructor(private router: Router,
+              public settings: SettingsDialogService) {
   }
 
   ngOnInit(): void {
