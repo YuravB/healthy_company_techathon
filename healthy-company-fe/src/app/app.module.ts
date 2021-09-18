@@ -10,6 +10,7 @@ import { MoodDialogComponent } from './mood-dialog/mood-dialog.component';
 import { TocDialogComponent } from './toc-dialog/toc-dialog.component';
 import {RouterModule} from '@angular/router';
 import {AppRoutingModule} from './app-routing/app-routing.module';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import {AppRoutingModule} from './app-routing/app-routing.module';
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
   ],
   providers: [FormBuilder],
   bootstrap: [AppComponent]
