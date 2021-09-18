@@ -27,6 +27,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatTooltipModule} from '@angular/material/tooltip';
+import {FooterComponent} from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import {MatTooltipModule} from '@angular/material/tooltip';
     TocDialogComponent,
     NavBarComponent,
     TocDialogComponent,
-    SettingsDialogComponent
+    SettingsDialogComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
