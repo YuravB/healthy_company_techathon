@@ -1,8 +1,8 @@
 export class JournalResponse {
   journalId: number;
-  entry: string;
+  entry?: string;
   date: string;
-  semantic: number;
+  semantic?: number;
   mood: string;
   affirmation: string;
 

@@ -6,22 +6,28 @@
 </mat-paginator>
 <div class="col-md-12">
   <table mat-table [dataSource]="dataSource" class="col-md-12 mat-elevation-z8 demo-table">
+    <!-- JournalEntry Column -->
+    <ng-container matColumnDef="JournalEntry">
+      <th mat-header-cell *matHeaderCellDef>Journal Entry</th>
+      <td mat-cell *matCellDef="let element">{{element.journalId}}</td>
+    </ng-container>
+
     <!-- DateCaptured Column -->
-    <ng-container matColumnDef="dateCaptured">
+    <ng-container matColumnDef="DateCaptured">
       <th mat-header-cell *matHeaderCellDef>Date Captured</th>
       <td mat-cell *matCellDef="let element">{{element.date}}</td>
     </ng-container>
 
     <!-- Mood Column -->
-    <ng-container matColumnDef="mood">
+    <ng-container matColumnDef="Mood">
       <th mat-header-cell *matHeaderCellDef>Mood</th>
       <td mat-cell *matCellDef="let element">{{element.mood}}</td>
     </ng-container>
 
     <!-- Affirmations Column -->
-    <ng-container matColumnDef="affirmations">
+    <ng-container matColumnDef="Affirmations">
       <th mat-header-cell *matHeaderCellDef>Affirmations</th>
-      <td mat-cell *matCellDef="let element">{{element.affirmations}}</td>
+      <td mat-cell *matCellDef="let element">{{element.affirmation}}</td>
     </ng-container>
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

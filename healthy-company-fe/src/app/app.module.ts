@@ -29,6 +29,7 @@ import {MatTabsModule} from '@angular/material/tabs';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {FooterComponent} from './footer/footer.component';
 import {MatSnackBar} from '@angular/material/snack-bar';
+import {JournalDialogComponent} from './journal-page/journal-dialog/journal-dialog.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import {MatSnackBar} from '@angular/material/snack-bar';
     NavBarComponent,
     TocDialogComponent,
     SettingsDialogComponent,
-    FooterComponent
+    FooterComponent,
+    JournalDialogComponent
   ],
   imports: [
     BrowserModule,
