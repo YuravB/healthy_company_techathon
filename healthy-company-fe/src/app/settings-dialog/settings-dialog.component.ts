@@ -39,12 +39,10 @@ export class SettingsDialogComponent implements OnInit {
 
   public clickOk() {
     this.bsModalRef.hide();
-    // this.onClose.next();
   }
 
   public clickCancel() {
     this.bsModalRef.hide();
-    // this.onClose.next();
   }
 
 }

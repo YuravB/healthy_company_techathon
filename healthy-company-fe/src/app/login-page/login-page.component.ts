@@ -14,6 +14,8 @@ export class LoginPageComponent extends BaseFormComponent implements OnInit {
 
   public form: FormGroup;
 
+  private discoveryLogo = 'assets/discoLogo.png';
+
   constructor(private formBuilder: FormBuilder,
               private router: Router,
               public moodDialogService: MoodDialogService,

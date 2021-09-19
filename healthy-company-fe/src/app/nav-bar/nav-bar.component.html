@@ -3,6 +3,7 @@
     <span class="spacer">
     <a>
 <!--    <mat-icon ></mat-icon>-->
+      <img src="assets/discoLogo.jpg" class="disco-logo">
     </a>
     </span>
     <span (click)="routeToHome()" [matTooltip]="'return home'">Discovery Healthy Company 2.0</span>
@@ -12,7 +13,9 @@
                                  </span>
     <span class="spacer"><button mat-raised-button color="primary" (click)="routeToAbout()">About</button></span>
     <span class="example-spacer"></span>
-    <span><button mat-raised-button color="warn" (click)="settings.showDialog()">Settings</button></span>
-    <span><button mat-raised-button color="primary" (click)="routeToLogin()">Logout</button></span>
+    <span><button mat-raised-button color="primary" (click)="settings.showDialog()"><img src="assets/settings.png"
+                                                                                         class="icon-size"></button></span>
+    <span><button mat-raised-button color="primary" (click)="routeToLogin()"><img src="assets/logout.png"
+                                                                                  class="icon-size"></button></span>
   </mat-toolbar-row>
 </mat-toolbar>

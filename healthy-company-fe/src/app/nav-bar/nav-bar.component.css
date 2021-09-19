@@ -1,6 +1,17 @@
 .spacer {
   padding: 0 14px;
 }
+
 .example-spacer {
   flex: 1 1 auto;
+}
+
+.icon-size {
+  height: 20px;
+  width: 20px;
+}
+
+.disco-logo {
+  height: 60px;
+  width: 60px;
 }

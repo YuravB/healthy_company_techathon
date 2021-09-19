@@ -1,8 +1,8 @@
-<div class="modal-header modal-header-item">
-  <h4 class="modal-title pull-left modal-header-text">{{ 'Settings' }}</h4>
+<div class="modal-header modal-header-item banner">
   <button type="button" class="close" aria-label="Close" (click)="clickCancel()">
     <span aria-hidden="true">&times;</span>
   </button>
+  <h4 class="modal-title text-center modal-header-text">{{ 'Settings' }}</h4>
 </div>
 <div class="modal-body">
   <div>
@@ -15,5 +15,5 @@
 
 </div>
 <div class="modal-footer">
-  <button type="button" class="btn btn-default" id="dialog-cancel" (click)="clickCancel()">Cancel</button>
+  <button type="button" class="btn btn-default" id="dialog-cancel" (click)="clickOk()">Save</button>
 </div>
