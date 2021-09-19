@@ -2,23 +2,20 @@ import {AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
 import {Router} from '@angular/router';
 import {MatPaginator} from '@angular/material/paginator';
 import {MatTableDataSource} from '@angular/material/table';
-import {SettingsDialogService} from '../settings-dialog/settings-dialog.service';
 import {JournalObj} from '../../services/dto/JournalObj';
-import {FormBuilder, FormGroup} from '@angular/forms';
-import {MoodDialogService} from '../mood-dialog/mood-dialog.service';
 import {MoodStoreService} from '../mood-dialog/mood-store.service';
 import {JournalResponse} from '../../services/dto/JournalResponse';
 import {JournalDialogService} from '../journal-page/journal-dialog/journal-dialog.service';
 
 const JOURNAL_DATA: JournalResponse[] = [
-  {journalId: 1, date: new Date().toString(), mood: 'Ecstatic', affirmation: 'Do Better'},
-  {journalId: 2, date: new Date().toString(), mood: 'Happy', affirmation: 'Do Better'},
-  {journalId: 3, date: new Date().toString(), mood: 'Ecstatic', affirmation: 'Do Better'},
-  {journalId: 4, date: new Date().toString(), mood: 'Depressed', affirmation: 'Do Better'},
-  {journalId: 5, date: new Date().toString(), mood: 'Sad', affirmation: 'Do Better'},
-  {journalId: 6, date: new Date().toString(), mood: 'Normal', affirmation: 'Do Better'},
-  {journalId: 7, date: new Date().toString(), mood: 'Angry', affirmation: 'Do Better'},
-  {journalId: 8, date: new Date().toString(), mood: 'Jubilant', affirmation: 'Do Better'},
+  {user_id: '1' , journalId: 1, date: new Date().toString(), mood: 'Ecstatic', affirmation: 'Do Better'},
+  {user_id: '1' , journalId: 2, date: new Date().toString(), mood: 'Happy', affirmation: 'I Love Myself for Who I Am.'},
+  {user_id: '1' , journalId: 3, date: new Date().toString(), mood: 'Ecstatic', affirmation: 'How I Feel Matters.'},
+  {user_id: '1' , journalId: 4, date: new Date().toString(), mood: 'Depressed', affirmation: 'I Am Strong and Capable.'},
+  {user_id: '1' , journalId: 5, date: new Date().toString(), mood: 'Sad', affirmation: 'I will turn negative thoughts into positive.'},
+  {user_id: '1' , journalId: 6, date: new Date().toString(), mood: 'Normal', affirmation: 'I will take action and accomplish my goals.'},
+  {user_id: '1' , journalId: 7, date: new Date().toString(), mood: 'Angry', affirmation: 'My goals are achievable'},
+  {user_id: '1' , journalId: 8, date: new Date().toString(), mood: 'Jubilant', affirmation: 'I have faith in my abilities'},
 ];
 
 @Component({

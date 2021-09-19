@@ -1,4 +1,5 @@
 export class JournalResponse {
+  user_id: string;
   journalId: number;
   entry?: string;
   date: string;

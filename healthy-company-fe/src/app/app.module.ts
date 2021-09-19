@@ -30,6 +30,7 @@ import {MatTooltipModule} from '@angular/material/tooltip';
 import {FooterComponent} from './footer/footer.component';
 import {MatSnackBar} from '@angular/material/snack-bar';
 import {JournalDialogComponent} from './journal-page/journal-dialog/journal-dialog.component';
+import {HttpClient, HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -61,7 +62,8 @@ import {JournalDialogComponent} from './journal-page/journal-dialog/journal-dial
     MatFormFieldModule,
     MatInputModule,
     MatTabsModule,
-    MatTooltipModule
+    MatTooltipModule,
+    HttpClientModule
   ],
   providers: [
     FormBuilder,
@@ -70,7 +72,8 @@ import {JournalDialogComponent} from './journal-page/journal-dialog/journal-dial
     BsModalService,
     ComponentLoaderFactory,
     PositioningService,
-    MatSnackBar
+    MatSnackBar,
+    HttpClient
   ],
   bootstrap: [AppComponent]
 })

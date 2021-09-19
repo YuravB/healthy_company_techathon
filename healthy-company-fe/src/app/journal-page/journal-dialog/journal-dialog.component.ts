@@ -12,6 +12,7 @@ export class JournalDialogComponent implements OnInit {
 
   get journalResponse(): JournalResponse {
     return {
+      user_id: '1',
       journalId: 10,
       entry: 'I am depressed',
       date: new Date().toString(),

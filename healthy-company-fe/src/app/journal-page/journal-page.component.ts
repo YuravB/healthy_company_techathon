@@ -26,6 +26,12 @@ export class JournalPageComponent implements OnInit {
   ]);
   private index = 0;
 
+  constructor(private formBuilder: FormBuilder,
+              private moodStoreService: MoodStoreService,
+              private restService: RestService,
+              private snackBar: MatSnackBar) {
+  }
+
   get entry(): JournalResponse {
     return this._entry;
   }
@@ -33,12 +39,6 @@ export class JournalPageComponent implements OnInit {
   @Input()
   set entry(value: JournalResponse) {
     this._entry = value;
-  }
-
-  constructor(private formBuilder: FormBuilder,
-              private moodStoreService: MoodStoreService,
-              private restService: RestService,
-              private snackBar: MatSnackBar) {
   }
 
   ngOnInit(): void {
@@ -78,11 +78,13 @@ export class JournalPageComponent implements OnInit {
     if (this.form.get('morning').value != null || this.form.get('afternoon').value != null || this.form.get('night').value != null) {
       this.openAff();
       console.log(this.journalResponseBuilder());
-      /*      this.restService.calculateSemantic({
-              date: new Date(),
-              mood: this.moodStoreService.mood,
-              affirmations: this.affMap.get(this.index);
-            });*/
+/*      this.restService.calculateSemantic({
+        date: new Date(),
+        mood: this.moodStoreService.mood,
+        affirmations: this.affMap.get(this.index)
+      }).subscribe(response => {
+        console.log(response);
+      });*/
     } else {
       this.snackBar.open('Please fill in a Journal Entry', 'Dismiss', {
         duration: 3000
@@ -92,6 +94,7 @@ export class JournalPageComponent implements OnInit {
 
   journalResponseBuilder() {
     const journalResponse: JournalResponse = {
+      user_id: '1',
       journalId: null,
       entry: this.form.get('morning').value,
       date: new Date().toString(),
