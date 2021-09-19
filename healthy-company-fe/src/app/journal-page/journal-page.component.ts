@@ -3,6 +3,7 @@ import {FormBuilder, FormGroup} from '@angular/forms';
 import {MoodStoreService} from '../mood-dialog/mood-store.service';
 import {MatSnackBar} from '@angular/material/snack-bar';
 import {JournalResponse} from '../../services/dto/JournalResponse';
+import {RestService} from '../../services/rest.service';
 
 @Component({
   selector: 'app-journal-page',
@@ -36,6 +37,7 @@ export class JournalPageComponent implements OnInit {
 
   constructor(private formBuilder: FormBuilder,
               private moodStoreService: MoodStoreService,
+              private restService: RestService,
               private snackBar: MatSnackBar) {
   }
 
@@ -76,6 +78,11 @@ export class JournalPageComponent implements OnInit {
     if (this.form.get('morning').value != null || this.form.get('afternoon').value != null || this.form.get('night').value != null) {
       this.openAff();
       console.log(this.journalResponseBuilder());
+      /*      this.restService.calculateSemantic({
+              date: new Date(),
+              mood: this.moodStoreService.mood,
+              affirmations: this.affMap.get(this.index);
+            });*/
     } else {
       this.snackBar.open('Please fill in a Journal Entry', 'Dismiss', {
         duration: 3000
